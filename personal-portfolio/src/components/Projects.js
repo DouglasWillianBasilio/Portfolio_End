@@ -18,11 +18,13 @@ export const Projects = () => {
     },
     {
       title: "Controle Salário",
+      url: "https://seu-salario.netlify.app/",
       description: "Aplicação para controlar o salário",
       imgUrl: projImg2,
     },
     {
       title: "Pizza Battle",
+      url: "https://pizzabattle.netlify.app/",
       description: "Projeto de um jogo feito para a faculdade",
       imgUrl: projImg3,
     },
@@ -81,7 +83,7 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="section">
-                      
+                        
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       

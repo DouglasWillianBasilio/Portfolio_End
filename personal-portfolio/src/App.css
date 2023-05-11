@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+.proj-imgbx a {
+  text-decoration: none;
+  color: #fff;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
