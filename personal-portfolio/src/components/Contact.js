@@ -4,7 +4,7 @@ import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import '../App.css';
-import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com';
 
 
 export const Contact = () => {
@@ -14,8 +14,7 @@ export const Contact = () => {
     email: '',
     phone: '',
     message: ''
-  }
-
+  };
   
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Enviar');
@@ -31,22 +30,31 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Enviando...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Enviar");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Mensagem enviada!'});
-    } else {
-      setStatus({ succes: false, message: 'Algo deu errado, tente novamente mais tarde.'});
+  
+    // Adicione suas informações de serviço, modelo de e-mail e usuário
+    const serviceId = 'service_fqh3ljq';
+    const templateId = 'template_8tgwyri';
+    const userId = 'qVoYy-0BtnD7Swlr2';
+  
+    try {
+      await emailjs.send(serviceId, templateId, formDetails, userId);
+      setStatus({ success: true, message: 'Mensagem enviada!' });
+      setFormDetails(formInitialDetails);
+    } catch (error) {
+      setStatus({ success: false, message: 'Algo deu errado, tente novamente mais tarde.' });
     }
+    setButtonText("Enviar");
   };
+  
+  
+  //   let result = await response.json();
+  //   setFormDetails(formInitialDetails);
+  //   if (result.code == 200) {
+  //     setStatus({ succes: true, message: 'Mensagem enviada!'});
+  //   } else {
+  //     setStatus({ succes: false, message: 'Algo deu errado, tente novamente mais tarde.'});
+  //   }
+  // };
 
   return (
     <section className="contact" id="connect">
@@ -66,16 +74,16 @@ export const Contact = () => {
                 <h2>Entre em contato</h2>
                 <form onSubmit={handleSubmit}>
                   <Row>
-                    <Col size={12} sm={6} className="px-1">
+                    <Col xs={12} sm={6} className="px-1">
                       <input type="text" value={formDetails.firstName} placeholder="Nome" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
                     </Col>
-                    <Col size={12} sm={6} className="px-1">
+                    <Col xs={12} sm={6} className="px-1">
                       <input type="text" value={formDetails.lasttName} placeholder="Sobrenome" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
                     </Col>
-                    <Col size={12} sm={6} className="px-1">
+                      <Col xs={12} sm={6} className="px-1">
                       <input type="email" value={formDetails.email} placeholder="Email" onChange={(e) => onFormUpdate('email', e.target.value)} />
                     </Col>
-                    <Col size={12} sm={6} className="px-1">
+                    <Col xs={12} sm={6} className="px-1">
                       <input type="tel" value={formDetails.phone} placeholder="WhatsApp" onChange={(e) => onFormUpdate('phone', e.target.value)}/>
                     </Col>
                     <Col size={12} className="px-1">
@@ -97,4 +105,5 @@ export const Contact = () => {
       </Container>
     </section>
   )
-}
+
+                  }
