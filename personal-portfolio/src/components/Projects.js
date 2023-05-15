@@ -4,6 +4,9 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png"
+import projImg5 from "../assets/img/project-img5.png"
+import projImg6 from "../assets/img/project-img6.png"
+import projImg7 from "../assets/img/project-img7.png"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -34,24 +37,32 @@ export const Projects = () => {
       url: "https://web-gym-site.netlify.app/",
       description: "WebSite para academias",
       imgUrl: projImg4,
+    },{
+      title: "Formulario para Email",
+      url: "https://email-form-orpin.vercel.app/",
+      description: "Aplicação para Envio de Emails",
+      imgUrl: projImg5,
+    },
+    {
+      title: "Validação de Cadastro",
+      url: "https://validando-cadastro.netlify.app/pages/abrir-conta-form.html",
+      description: "Aplicação para validar cadastro",
+      imgUrl: projImg6,
     }
-    // {
-    //   title: "Business Startup",
-    //   description: "Design & Development",
-    //   imgUrl: projImg1,
-    // },
-    // {
-    //   title: "Business Startup",
-    //   description: "Design & Development",
-    //   imgUrl: projImg2,
-    // },
-    // {
-    //   title: "Business Startup",
-    //   description: "Design & Development",
-    //   imgUrl: projImg3,
-    // },
+
   ];
 
+  const projectsSecond = [
+    {
+      title: "Kimetsu no Yaiba",
+      url: "https://kimetsu-no-yaiba2023.netlify.app/index.html",
+      description: "Site para Assistir Kimetsu no Yaiba",
+      imgUrl: projImg7,
+    }
+    
+    // Add more projects as needed
+  ];
+  
   return (
     <section className="project" id="project">
       <Container>
@@ -89,9 +100,15 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                        
-                    </Tab.Pane>
+
+                    <Tab.Pane eventKey="second">
+                    <Row>
+                      {projectsSecond.map((project, index) => (
+                        <ProjectCard key={index} {...project} />
+                      ))}
+                    </Row>
+                  </Tab.Pane>
+
                     <Tab.Pane eventKey="third">
                       
                     </Tab.Pane>

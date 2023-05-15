@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Web Developer", "Web Designer", "Front End Developer" ];
+  const toRotate = ["Web Developer", "Web Designer", "Front End Developer"];
   const period = 2000;
 
   useEffect(() => {
@@ -46,27 +46,32 @@ export const Banner = () => {
       setIndex(prevIndex => prevIndex + 1);
     }
   }
-
+  const handleClick = () => {
+    window.location.href = "#connect";
+  };
   return (
+
     <section className="banner" id="home">
       <Container>
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Bem vindo ao meu Portfolio</span>
-                <h1>{`Olá! Meu nome é Douglas`} </h1>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span className="tagline">Bem vindo ao meu Portfolio</span>
+                  <h1>{`Olá! Meu nome é Douglas`} </h1>
                   <p>Desenvolvedor Front End. Comecei minha carreira profissional aos 17 anos trabalhando como editor de vídeos, desde cedo sou apaixonado pela tecnologia e pela infinidade de oportunidade que ela nos concede.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-              </div>}
+                  <button onClick={handleClick}>
+                    Let’s Connect <ArrowRightCircle size={25} />
+                  </button>
+                </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerImg} alt="Header Img" />
                 </div>}
             </TrackVisibility>
           </Col>
