@@ -7,6 +7,7 @@ import projImg4 from "../assets/img/project-img4.png"
 import projImg5 from "../assets/img/project-img5.png"
 import projImg6 from "../assets/img/project-img6.png"
 import projImg7 from "../assets/img/project-img7.png"
+import projImg8 from "../assets/img/project-img8.png"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -44,10 +45,10 @@ export const Projects = () => {
       imgUrl: projImg5,
     },
     {
-      title: "Validação de Cadastro",
-      url: "https://validando-cadastro.netlify.app/pages/abrir-conta-form.html",
-      description: "Aplicação para validar cadastro",
-      imgUrl: projImg6,
+      title: "Site Pizzaria",
+      url: "https://pizza-site-nu.vercel.app/",
+      description: "Site para uma pizzaria ",
+      imgUrl: projImg8,
     }
 
   ];
@@ -58,7 +59,14 @@ export const Projects = () => {
       url: "https://kimetsu-no-yaiba2023.netlify.app/index.html",
       description: "Site para Assistir Kimetsu no Yaiba",
       imgUrl: projImg7,
+    },
+    {
+      title: "Validação de Cadastro",
+      url: "https://validando-cadastro.netlify.app/pages/abrir-conta-form.html",
+      description: "Aplicação para validar cadastro",
+      imgUrl: projImg6,
     }
+    
     
     // Add more projects as needed
   ];
