@@ -8,6 +8,7 @@ import projImg5 from "../assets/img/project-img5.png"
 import projImg6 from "../assets/img/project-img6.png"
 import projImg7 from "../assets/img/project-img7.png"
 import projImg8 from "../assets/img/project-img8.png"
+import projImg9 from "../assets/img/project-img9.png"
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -40,9 +41,9 @@ export const Projects = () => {
       imgUrl: projImg4,
     },{
       title: "Formulario para Email",
-      url: "https://email-form-orpin.vercel.app/",
-      description: "Aplicação para Envio de Emails",
-      imgUrl: projImg5,
+      url: "https://travel-website-khaki-kappa.vercel.app/",
+      description: "Aplicação Web para site de Viagens",
+      imgUrl: projImg9,
     },
     {
       title: "Site Pizzaria",
@@ -65,6 +66,12 @@ export const Projects = () => {
       url: "https://validando-cadastro.netlify.app/pages/abrir-conta-form.html",
       description: "Aplicação para validar cadastro",
       imgUrl: projImg6,
+    },
+    {
+      title: "Formulario para Email",
+      url: "https://email-form-orpin.vercel.app/",
+      description: "Aplicação para Envio de Emails",
+      imgUrl: projImg5,
     }
     
     
