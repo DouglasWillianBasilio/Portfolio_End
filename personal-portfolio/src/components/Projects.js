@@ -40,7 +40,7 @@ export const Projects = () => {
       description: "WebSite para academias",
       imgUrl: projImg4,
     },{
-      title: "Formulario para Email",
+      title: "Travel WebSite",
       url: "https://travel-website-khaki-kappa.vercel.app/",
       description: "Aplicação Web para site de Viagens",
       imgUrl: projImg9,
